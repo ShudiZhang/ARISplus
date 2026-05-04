@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARIS Research Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">ARIS Research Workflow</p>
+      <h1 id="project-title">ARIS Research Dashboard</h1>
+      <p id="project-summary" class="summary">Static view of ARIS workflow state.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card wide">
+        <h2>Workflow Status</h2>
+        <div id="workflow-list" class="timeline"></div>
+      </article>
+
+      <article class="card score-card">
+        <h2>Paper Quality</h2>
+        <div id="quality-score" class="score">unknown</div>
+        <p id="quality-verdict" class="muted">not available</p>
+      </article>
+
+      <article class="card">
+        <h2>Rubric Scores</h2>
+        <div id="rubric-grid" class="rubric-grid"></div>
+      </article>
+
+      <article class="card">
+        <h2>Submission Readiness</h2>
+        <p id="submission-status" class="status-pill">unknown</p>
+        <div id="audit-list" class="list"></div>
+      </article>
+
+      <article class="card">
+        <h2>Artifacts</h2>
+        <div id="artifact-list" class="list"></div>
+      </article>
+
+      <article class="card">
+        <h2>Experiments</h2>
+        <div id="experiment-summary" class="metric-row"></div>
+      </article>
+    </section>
+  </main>
+
+  <script id="dashboard-data" type="application/json">
+{
+  "project": {
+    "name": "ARIS Research Dashboard",
+    "summary": "Run tools/render_dashboard.py to embed real dashboard data."
+  }
+}
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
+

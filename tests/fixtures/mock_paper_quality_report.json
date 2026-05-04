@@ -1,0 +1,149 @@
+{
+  "schema_version": "1",
+  "report_type": "paper-quality-eval",
+  "rubric_source": "stanford_agentic_reviewer_style",
+  "paper": {
+    "title": "Structured Research Agents for Reliable Paper Improvement",
+    "directory": "paper",
+    "main_tex": "paper/main.tex",
+    "main_pdf": "paper/main.pdf"
+  },
+  "venue": "ICLR",
+  "overall_score": 7.1,
+  "overall_verdict": "almost",
+  "overall_confidence": "medium",
+  "summary": "The paper has a clear workflow contribution and credible audit stack, but the empirical evidence needs one stronger ablation package before submission.",
+  "rubric_scores": {
+    "originality": {
+      "score": 7.0,
+      "confidence": "medium",
+      "rationale": "The contribution combines known workflow ideas in a useful research-agent setting.",
+      "evidence": [
+        {
+          "file": "paper/sections/1_intro.tex",
+          "location": "contributions",
+          "note": "The paper states a distinct structured evaluation layer."
+        }
+      ],
+      "minimum_fix": "Clarify which part is new relative to automated paper-review systems."
+    },
+    "importance": {
+      "score": 7.5,
+      "confidence": "medium",
+      "rationale": "Reliable AI-assisted research workflows are timely and practically important.",
+      "evidence": [
+        {
+          "file": "paper/sections/1_intro.tex",
+          "location": "motivation",
+          "note": "The motivation identifies reviewer bias and audit drift."
+        }
+      ],
+      "minimum_fix": "Quantify how often the baseline workflow misses quality failures."
+    },
+    "claims_supported": {
+      "score": 6.5,
+      "confidence": "medium",
+      "rationale": "Most claims have artifact support, but one evaluation claim lacks raw-result backing.",
+      "evidence": [
+        {
+          "file": "paper/PAPER_CLAIM_AUDIT.json",
+          "location": "verdict",
+          "note": "The audit reports WARN for one ambiguous mapping."
+        }
+      ],
+      "minimum_fix": "Add raw evidence for the ambiguous claim or soften the claim."
+    },
+    "experiment_soundness": {
+      "score": 6.8,
+      "confidence": "medium",
+      "rationale": "The experiments are plausible but need one controlled ablation.",
+      "evidence": [
+        {
+          "file": "refine-logs/EXPERIMENT_LOG.md",
+          "location": "main table",
+          "note": "The main result exists but ablation coverage is thin."
+        }
+      ],
+      "minimum_fix": "Run an ablation separating state export from quality evaluation."
+    },
+    "writing_clarity": {
+      "score": 7.4,
+      "confidence": "high",
+      "rationale": "The narrative is readable and section structure is easy to follow.",
+      "evidence": [
+        {
+          "file": "paper/main.tex",
+          "location": "overall",
+          "note": "Section order follows the workflow lifecycle."
+        }
+      ],
+      "minimum_fix": "Add a short glossary for workflow artifacts and audit states."
+    },
+    "community_value": {
+      "score": 7.2,
+      "confidence": "medium",
+      "rationale": "The artifact protocol and dashboard are useful to agent-tooling researchers.",
+      "evidence": [
+        {
+          "file": "paper/sections/5_discussion.tex",
+          "location": "impact",
+          "note": "The paper explains portability across host agents."
+        }
+      ],
+      "minimum_fix": "Include a small user-facing case study."
+    },
+    "prior_work_context": {
+      "score": 6.9,
+      "confidence": "medium",
+      "rationale": "The related work mentions automated review, but the distinction from agentic reviewer systems can be sharper.",
+      "evidence": [
+        {
+          "file": "paper/CITATION_AUDIT.json",
+          "location": "per_entry",
+          "note": "No REMOVE verdicts, but one FIX remains."
+        }
+      ],
+      "minimum_fix": "Add a paragraph comparing the rubric to Stanford Agentic Reviewer."
+    }
+  },
+  "blocking_issues": [
+    {
+      "severity": "major",
+      "dimension": "claims_supported",
+      "issue": "One quality-improvement claim has ambiguous raw evidence.",
+      "evidence": "paper/PAPER_CLAIM_AUDIT.json",
+      "minimum_fix": "Attach the raw result file or soften the claim."
+    }
+  ],
+  "minimum_fixes": [
+    {
+      "priority": 1,
+      "dimension": "claims_supported",
+      "fix": "Resolve the ambiguous numeric claim before declaring submission-ready."
+    },
+    {
+      "priority": 2,
+      "dimension": "experiment_soundness",
+      "fix": "Add one ablation for the state-center component."
+    }
+  ],
+  "inputs": {
+    "paper_files": [
+      "paper/main.tex",
+      "paper/main.pdf"
+    ],
+    "audit_artifacts": [
+      "paper/PAPER_CLAIM_AUDIT.json",
+      "paper/CITATION_AUDIT.json"
+    ],
+    "missing_optional": [
+      "paper/PROOF_AUDIT.json"
+    ]
+  },
+  "trace_path": ".aris/traces/paper-quality-eval/20260504_run01/",
+  "thread_id": "mock-thread",
+  "reviewer_model": "gpt-5.4",
+  "reviewer_reasoning": "xhigh",
+  "generated_at": "2026-05-04T12:00:00Z"
+}
+

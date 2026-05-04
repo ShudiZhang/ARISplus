@@ -44,3 +44,9 @@ patent/
 
 # OMC runtime state
 .omc/
+
+# Local private planning / discussion notes for coursework coordination
+.private/
+.tmp_test_outputs/
+AGENTS.md
+docs/coursework/

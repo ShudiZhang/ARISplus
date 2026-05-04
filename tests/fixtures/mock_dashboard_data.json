@@ -1,0 +1,57 @@
+{
+  "project": {
+    "name": "ARIS Coursework Demo",
+    "summary": "Static dashboard data generated from ARIS artifacts."
+  },
+  "workflow": {
+    "phases": [
+      {
+        "name": "idea-discovery",
+        "label": "Idea Discovery",
+        "status": "completed",
+        "summary": "Idea report generated and selected."
+      },
+      {
+        "name": "paper-quality-eval",
+        "label": "Paper Quality Eval",
+        "status": "completed",
+        "summary": "Structured rubric report available."
+      }
+    ]
+  },
+  "paper_quality": {
+    "overall_score": 7.1,
+    "overall_verdict": "almost",
+    "overall_confidence": "medium",
+    "rubric_scores": {
+      "originality": {"score": 7.0, "minimum_fix": "Clarify novelty."},
+      "importance": {"score": 7.5, "minimum_fix": "Quantify user impact."},
+      "claims_supported": {"score": 6.5, "minimum_fix": "Resolve one ambiguous claim."},
+      "experiment_soundness": {"score": 6.8, "minimum_fix": "Add one ablation."},
+      "writing_clarity": {"score": 7.4, "minimum_fix": "Add glossary."},
+      "community_value": {"score": 7.2, "minimum_fix": "Add case study."},
+      "prior_work_context": {"score": 6.9, "minimum_fix": "Compare to agentic reviewers."}
+    }
+  },
+  "submission": {
+    "status": "almost",
+    "audits": [
+      {"name": "paper-claim-audit", "verdict": "WARN"},
+      {"name": "citation-audit", "verdict": "PASS"}
+    ]
+  },
+  "artifacts": [
+    {"path": "paper/PAPER_QUALITY_REPORT.json", "stage": "paper"},
+    {"path": "paper/SUBMISSION_READINESS_REPORT.json", "stage": "paper"}
+  ],
+  "experiments": {
+    "counts": {
+      "queued": 0,
+      "running": 0,
+      "completed": 12,
+      "failed": 1,
+      "unknown": 0
+    }
+  }
+}
+
